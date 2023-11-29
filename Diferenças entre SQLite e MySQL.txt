@@ -1,0 +1,27 @@
+SQLite e MySQL são sistemas de gerenciamento de banco de dados (SGBDs) que têm algumas diferenças significativas em suas características e casos de uso. Abaixo estão as principais diferenças entre SQLite e MySQL:
+
+Tipo de SGBD:
+
+SQLite: É um banco de dados SQL embutido, que não requer um servidor de banco de dados separado. É uma biblioteca C que pode ser incorporada diretamente em aplicativos, tornando-o uma excelente escolha para aplicativos desktop, móveis e embarcados.
+MySQL: É um banco de dados SQL completo, que requer um servidor de banco de dados separado para ser executado. É usado principalmente como um servidor de banco de dados em uma arquitetura cliente-servidor e é adequado para aplicativos que precisam lidar com um grande volume de dados e acessos concorrentes.
+Arquitetura:
+
+SQLite: Por ser embutido, o SQLite é executado no mesmo processo que o aplicativo que o utiliza. Não há processo separado de servidor, o que torna a configuração e o uso extremamente simples.
+MySQL: É executado como um processo de servidor separado, que pode ser acessado por vários aplicativos e clientes em rede. O MySQL usa uma arquitetura cliente-servidor, o que permite conexões remotas de diferentes máquinas.
+Acesso ao Banco de Dados:
+
+SQLite: O acesso ao banco de dados é feito localmente através de chamadas diretas à biblioteca do SQLite. Ele suporta apenas um usuário por vez e é adequado para aplicativos de uso único ou com poucos usuários simultâneos.
+MySQL: O acesso ao banco de dados é feito por meio de consultas SQL enviadas ao servidor MySQL. Ele suporta vários usuários concorrentes e é adequado para aplicativos que exigem acesso simultâneo de muitos usuários.
+Recursos:
+
+SQLite: É uma opção mais leve e simples, adequada para aplicações menores e que não exigem recursos avançados ou escalabilidade.
+MySQL: Oferece recursos avançados, como suporte a transações ACID, controle de acesso baseado em usuário, replicação, clustering e outras funcionalidades para lidar com grandes volumes de dados e ambientes de alto tráfego.
+Licença:
+
+SQLite: É de domínio público, o que significa que pode ser usado sem restrições.
+MySQL: Originalmente, era licenciado sob a GPL (General Public License), mas agora existem várias edições, incluindo a MySQL Community Edition, que é gratuita, e a MySQL Enterprise Edition, que requer uma licença comercial.
+Instalação:
+
+SQLite: Não requer instalação, pois é uma biblioteca embutida.
+MySQL: Requer instalação e configuração de um servidor MySQL separado.
+A escolha entre SQLite e MySQL depende das necessidades específicas do seu projeto. O SQLite é ótimo para aplicativos menores e de uso único, enquanto o MySQL é mais adequado para aplicativos web e aplicativos que exigem escalabilidade e suporte a múltiplos usuários.

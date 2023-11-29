@@ -1,0 +1,48 @@
+COMANDO SQL
+
+TABELA USUARIO
+
+* CONSULTAR TODOS OS REGISTROS
+
+	SELECT * FROM tb_usuario;
+
+* CONSULTAR REGISTRO CODIGO DE MATRICULA 5
+
+	SELECT * FROM tb_usuario WHERE matricula = 5;
+
+* CONSULTAR TODOS OS REGISTROS E EXIBIR SOMENTE CAMPOS (MATRICULA, NOME e TELEFONE)
+	
+	SELECT matricula, nome, telefone FROM tb_usuario;
+
+* CONSULTAR REGISTRO CODIGO DE MATRICULA 5 E EXIBIR SOMENTE CAMPOS (MATRICULA, NOME e TELEFONE)
+
+	SELECT matricula, nome, telefone FROM tb_usuario WHERE matricula = 5;
+
+* CONSULTAR USUARIO Juliana Oliveira E EXIBIR SOMENTE CAMPOS (MATRICULA, NOME e TELEFONE)
+
+	SELECT matricula, nome, telefone FROM tb_usuario WHERE nome = 'Juliana Oliveira';
+
+---------------------------------------------------------------------------------------------------------------
+
+* ALTERAR TELEFONE DO REGISTRO CODIGO DE MATRICULA 5
+
+	UPDATE tb_usuario
+	SET telefone = '9999999'
+	WHERE matricula = 5;
+
+* ALTERAR DADOS DO REGISTRO CODIGO DE MATRICULA 5
+
+	UPDATE tb_usuario
+	SET telefone = '91234678',
+		complemento = 'sala 20'
+	WHERE matricula = 5;
+
+---------------------------------------------------------------------------------------------------------------
+
+* DELETAR REGISTRO CODIGO DE MATRICULA 5
+	
+	DELETE FROM tb_usuario WHERE matricula = 5;
+
+* DELETAR TODOS OS DADOS
+
+	DELETE FROM tb_usuario;

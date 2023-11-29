@@ -1,0 +1,41 @@
+INNER JOIN (JUNÇÃO INTERNA): Este tipo de JOIN retorna registros que têm valores correspondentes em ambas as tabelas. Ou seja, só aparecerão nas linhas resultantes os valores que existem em ambas as tabelas, de acordo com a condição de JOIN especificada.
+
+-- EXEMPLO Instrução SQL
+	SELECT * FROM tabela1
+	INNER JOIN tabela2
+	ON tabela1.coluna1 = tabela2.coluna2;
+
+
+-- EXEMPLO Instrução SQL 3 tabelas
+
+	SELECT 
+		Tabela1.ColunaA, 
+		Tabela2.ColunaB, 
+		Tabela3.ColunaC
+	FROM 
+		Tabela1
+	INNER JOIN 
+		Tabela2 ON Tabela1.ID1 = Tabela2.ID2
+	INNER JOIN 
+		Tabela3 ON Tabela2.ID2 = Tabela3.ID3;
+		
+		
+		
+========================================================
+
+
+-- SELECT * FROM tb_emprestimo;
+-- SELECT * FROM tb_usuario;
+-- SELECT * FROM tb_livro;
+
+SELECT
+	tb_emprestimo.data_emprestimo,
+	tb_emprestimo.data_devolucao,
+	tb_usuario.nome,
+	tb_livro.titulo
+FROM
+	tb_emprestimo
+INNER JOIN
+	tb_usuario ON tb_usuario.matricula = tb_emprestimo.matricula
+INNER JOIN
+	tb_livro ON tb_livro.codigo_catalogacao = tb_emprestimo.codigo_catalogacao;

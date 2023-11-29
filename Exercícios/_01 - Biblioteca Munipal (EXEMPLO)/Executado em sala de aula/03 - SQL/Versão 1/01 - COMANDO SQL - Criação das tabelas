@@ -1,0 +1,56 @@
+COMANDO SQL - Criação das tabelas
+
+
+-- Criar a tabela USUARIO
+
+CREATE TABLE "tb_usuario" (
+	"matricula"	INTEGER,
+	"nome"	TEXT,
+	"telefone"	TEXT,
+	"rua"	TEXT,
+	"numero"	TEXT,
+	"cep"	TEXT,
+	"complemento"	TEXT,
+	"bairro"	TEXT,
+	"cidade"	TEXT,
+	"estado"	TEXT,
+	PRIMARY KEY("matricula" AUTOINCREMENT)
+);
+
+------------------------------------------------------
+
+-- Criar a tabela LIVRO
+
+CREATE TABLE "tb_livro" (
+	"codigo_catalogacao"	INTEGER,
+	"titulo"	TEXT NOT NULL,
+	"autor"	TEXT NOT NULL,
+	"editora"	TEXT NOT NULL,
+	"ano_de_publicacao"	TEXT NOT NULL,
+	PRIMARY KEY("codigo_catalogacao" AUTOINCREMENT)
+);
+
+
+------------------------------------------------------
+
+-- Criar a tabela EXEMPLAR
+
+CREATE TABLE "tb_exemplar" (
+	"codigo_catalogacao"	INTEGER,
+	"quantidade"	INTEGER,
+	CONSTRAINT "codigo_catalogacao" FOREIGN KEY("codigo_catalogacao") REFERENCES "tb_livro"("codigo_catalogacao")
+);
+
+
+------------------------------------------------------
+
+-- Criar a tabela EMPRESTIMO
+
+CREATE TABLE "tb_emprestimo" (
+	"codigo_catalogacao"	INTEGER,
+	"matricula"	INTEGER,
+	"data_emprestimo"	TEXT,
+	"data_devolucao"	TEXT,
+	CONSTRAINT "codigo_catalogacao" FOREIGN KEY("codigo_catalogacao") REFERENCES "tb_livro"("codigo_catalogacao"),
+	CONSTRAINT "matricula" FOREIGN KEY("matricula") REFERENCES "tb_usuario"("matricula")
+);
